@@ -39,3 +39,6 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+let nomUsuario = document.getElementById("nombreUsuario");
+nomUsuario.innerHTML = `<a href="#" class="nav-link">${localStorage.getItem('nametag')}</a>`;

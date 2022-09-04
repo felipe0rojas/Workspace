@@ -12,3 +12,6 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+let nomUsuario = document.getElementById("nombreUsuario");
+nomUsuario.innerHTML = `<a href="#" class="nav-link">${localStorage.getItem('nametag')}</a>`;
