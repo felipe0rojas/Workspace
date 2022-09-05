@@ -250,3 +250,16 @@ a.custom-card:hover {
   margin-top: -14.58%;
   margin-left: 8px; 
 }
+
+#precioAsc {
+  margin-left: 700px;
+}
+
+#precioAsc, #precioDesc, #relevancia {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#precio-min {
+  margin-left: 650px;
+}

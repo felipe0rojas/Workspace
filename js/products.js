@@ -123,5 +123,17 @@ document.addEventListener('DOMContentLoaded', function () {
     prods = prodsSinFiltro;
     mostrarDatos();
   })
+
+  // En costrucción
+  // let formularioBuscador = document.getElementById("buscador")
+
+  // formularioBuscador.addEventListener('keyup', function () {
+  //   eliminarDatos();
+  //   let text = formularioBuscador.value.toLowerCase();
+  //   for (prodsBuscador of prodsSinFiltro) {
+  //     let esto = prodsBuscador.name.toLowerCase();
+  //     if (esto.indexOf(text) !== -1) {
+  //   }
+  // }})
 })
 
