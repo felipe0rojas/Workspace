@@ -9,28 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
       mostrarDatos();
     })
 
-  function tituloDescriptivo() {
-    if ((localStorage.getItem("catID")) == 101) {
-      let testo = document.getElementById("titulo-descriptivo")
-      testo.innerHTML = `<h2>Los mejores precios en autos 0 kilómetro, de alta y media gama.</h2>`
-    } else {
-      if ((localStorage.getItem("catID")) == 102) {
-        let testo = document.getElementById("titulo-descriptivo")
-        testo.innerHTML = `<h2>Encuentra aquí los mejores precios para niños/as de cualquier edad.</h2>`
-      } else {
-        if ((localStorage.getItem("catID")) == 103) {
-          let testo = document.getElementById("titulo-descriptivo")
-          testo.innerHTML = `<h2>Muebles antiguos, nuevos y para ser armados por uno mismo.</h2>`
-        } else {
-          let testo = document.getElementById("titulo-descriptivo")
-          testo.innerHTML = `<h2>¡Estamos trabajando para traerte lo mejor de esta sección!</h2>`
-        }
-      }
-    }
-  }
-
-  tituloDescriptivo();
   let prods = [];
+  tituloDescriptivo();
+  redirigirAInfo();
+
 
   let btnPrecioAsc = document.getElementById("precioAsc")
   let btnPrecioDesc = document.getElementById("precioDesc")
@@ -41,13 +23,43 @@ document.addEventListener('DOMContentLoaded', function () {
   let btnFiltrar = document.getElementById("btn-filtrado")
   let btnLimpiar = document.getElementById("btn-limpiar")
 
+  function tituloDescriptivo() {
+    if ((localStorage.getItem("catID")) == 101) {
+      let subtitulo = document.getElementById("titulo-descriptivo")
+      subtitulo.innerHTML = `<h2>Los mejores precios en autos 0 kilómetro, de alta y media gama.</h2>`
+    } else {
+      if ((localStorage.getItem("catID")) == 102) {
+        let subtitulo = document.getElementById("titulo-descriptivo")
+        subtitulo.innerHTML = `<h2>Encuentra aquí los mejores precios para niños/as de cualquier edad.</h2>`
+      } else {
+        if ((localStorage.getItem("catID")) == 103) {
+          let subtitulo = document.getElementById("titulo-descriptivo")
+          subtitulo.innerHTML = `<h2>Muebles antiguos, nuevos y para ser armados por uno mismo.</h2>`
+        } else {
+          let subtitulo = document.getElementById("titulo-descriptivo")
+          subtitulo.innerHTML = `<h2>¡Estamos trabajando para traerte lo mejor de esta sección!</h2>`
+        }
+      }
+    }
+  }
   function mostrarDatos() {
     for (let i = 0; i <= prods.length; i++) {
       let newDiv = document.getElementById("auto" + [i] + "_id");
-      newDiv.innerHTML += `<h1>${prods[i].name + ' - ' + prods[i].currency + ' ' + prods[i].cost}</h1>`;
+      newDiv.innerHTML += `<h1>${prods[i].name + ' - ' + prods[i].currency + ' ' + prods[i].cost}<h1>`;
       newDiv.innerHTML += `<p class="descripcion">${prods[i].description}</p>`;
-      newDiv.innerHTML += `<img src=${prods[i].image}></img>`;
-      newDiv.innerHTML += `<p class="vendidos${[i]}">${prods[i].soldCount} vendidos</p>`;
+      newDiv.innerHTML += `<img src=${prods[i].image} id=${[i]}></img>`;
+      newDiv.innerHTML += `<p class="vendidos${[i]}">${prods[i].soldCount} vendidos</p>`
+    }
+  }
+
+  function redirigirAInfo() {
+    for (let i = 0; i <= 5; i++) {
+      let paginaADirigir = document.getElementById("auto" + [i] + "_id");
+      paginaADirigir.addEventListener("click", function () {
+        console.log(prods[i].id)
+        localStorage.setItem("idProducto", prods[i].id)
+        window.location.href = 'product-info.html';
+      })
     }
   }
 
@@ -58,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  btnRelevancia.addEventListener('click', function() {
+  btnRelevancia.addEventListener('click', function () {
     prods.sort(function (a, b) {
       if (a.soldCount > b.soldCount) {
         return -1;
