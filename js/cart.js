@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" id="test2" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
                     </div>
                 </div>
             </div>

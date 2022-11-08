@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         let comentario = document.createElement('div');
         comentario.setAttribute("class", "card");
-        comentario.setAttribute("id", "test");
+        comentario.setAttribute("id", "caja-comentarios");
         let listaDeComentarios = document.createElement('ul');
         listaDeComentarios.setAttribute("class", "list-group list-group-flush");
 
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     if(comentarioUsuario.description.length > 0){
 
-                    document.getElementById("test").innerHTML += `<li class="list-group-item"><p><b>${comentarioUsuario.user}</b> - ${comentarioUsuario.dateTime} - ${funcionEstrellas(comentarioUsuario.score).estrellas}</p><p>${comentarioUsuario.description}</p></li>`;
+                    document.getElementById("caja-comentarios").innerHTML += `<li class="list-group-item"><p><b>${comentarioUsuario.user}</b> - ${comentarioUsuario.dateTime} - ${funcionEstrellas(comentarioUsuario.score).estrellas}</p><p>${comentarioUsuario.description}</p></li>`;
                     }
             })
     }
