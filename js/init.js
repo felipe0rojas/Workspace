@@ -44,16 +44,29 @@ let barraNav = document.getElementsByClassName("navbar-nav w-100 justify-content
 let botonUsuario = document.createElement('div');
 botonUsuario.setAttribute("class", "dropdown");
 barraNav.appendChild(botonUsuario);
-botonUsuario.innerHTML = `<li><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+
+botonUsuario.innerHTML = `
+<li>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
             ${localStorage.getItem('nametag')}
-          </button><ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
-            <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" id="botonCerrarSesion">Cerrar sesión</a></li>
-          </ul></li>'`
+  </button><ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+  <li>
+    <a class="dropdown-item" href="cart.html">Mi carrito</a>
+  </li>
+  <li>
+    <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+  </li>
+  <li>
+    <hr class="dropdown-divider">
+  </li>
+  <li>
+    <a class="dropdown-item" id="botonCerrarSesion">Cerrar sesión</a>
+  </li>
+  </ul>
+</li>'`
 
 let cerrarSesion = document.getElementById("botonCerrarSesion");
+
 cerrarSesion.addEventListener('click', function () {
   localStorage.removeItem("nametag");
   window.location.href = 'index.html';
