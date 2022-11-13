@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contenedorMain.appendChild(btnComprar);
 
             (() => {
+                'use strict'
                 const forms = document.querySelectorAll('.needs-validation')
 
                 Array.from(forms).forEach(form => {
@@ -101,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < productoEnLS.length; i++) {
             productos.innerHTML += `
         <tr>
-            <td style="max-width: 15vh;max-height: 15vh;"><img src=${productoEnLS[i].image} style="max-width:50%; max-height:50%;"></img></td>
+            <td style="max-width: 15vh;max-height: 15vh;"><img src=${productoEnLS[i].image} class="img-producto-carrito"></img></td>
             <td id="nombreProducto"><p>${productoEnLS[i].name}</p></td>
             <td><p>${productoEnLS[i].currency} ${productoEnLS[i].unitCost}</p></td>
             <td><input type="number"  id="cantidadDeProducto${i}" value="1" min="1" style="border-radius: .25rem; padding: .375rem .75rem; border: 1px solid #ced4da; max-width: 8vh;"></td> 
@@ -240,21 +241,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h3 style="text-align:center;">Dirección de envío</h3>
                 <div style="display:flex; flex-direction: column;">
                     <div class="form-floating m-3">
-                        <input type="text" class="form-control" id="envioCalle" placeholder="Calle" style="width:24vw;" required>
-                        <label for="envioCalle">Calle</label>
+                        <input type="text" class="form-control" id="envio-calle" placeholder="Calle" required>
+                        <label for="envio-calle">Calle</label>
                         <p class="invalid-feedback">Ingrese una calle</p>
                     </div>
 
                     <div style="display:flex;">
                         <div class="form-floating m-3">
-                            <input type="number" class="form-control" id="floatingInput" placeholder="Número" style="width:12vw;" required>
-                            <label for="floatingInput">Número</label>
+                            <input type="number" class="form-control" id="envio-numero" placeholder="Número"  required>
+                            <label for="envio-numero">Número</label>
                             <p class="invalid-feedback">Ingrese su número de puerta</p>
                         </div>
 
                         <div class="form-floating m-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Esquina" style="width:10vw; align-self:flex-end" required>
-                            <label for="floatingInput">Apartamento</label>
+                            <input type="text" class="form-control" id="envio-apartamento" placeholder="Apartamento"  required>
+                            <label for="envio-apartamento">Apartamento</label>
                             <p class="invalid-feedback">Ingrese un número de apartamento</p>
                         </div>
 
@@ -422,12 +423,5 @@ document.addEventListener('DOMContentLoaded', function () {
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     `;
-
-
-
-
-
-
-
 
 })
