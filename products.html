@@ -40,14 +40,21 @@
     <div style="text-align:center;"><h1><b>Productos</b></h1><br>
     <div id="titulo-descriptivo"></div></div>
     <div>
-      <input type="button" class="btn btn-light btn-block" id="precioAsc" value="Menor Precio">
-      <input type="button" class="btn btn-light btn-block" id="precioDesc" value="Mayor precio">
-      <input type="button" class="btn btn-light btn-block" id="relevancia" value="Lo más popular"><br>
-      <input type="number" id="precio-min" placeholder="min">
-      <input type="number" id="precio-max" placeholder="máx">
-      <input type="button" class="btn btn-light btn-block" id="btn-filtrado" value="Filtrar">
-      <input type="button" class="btn btn-link btn-sm" id="btn-limpiar" value="Limpiar">
-      <!-- <input type="search" id="buscador" placeholder="Busque aquí"> -->
+      <div class="row">
+        <div class="fila-productos-precio" style="display:flex;"> 
+          <input type="button" class="btn btn-light btn-block" id="precioAsc" value="Menor Precio">
+          <input type="button" class="btn btn-light btn-block" id="precioDesc" value="Mayor precio">
+          <input type="button" class="btn btn-light btn-block" id="relevancia" value="Lo más popular">
+        </div>
+      </div>
+      <div class="row">
+        <div class="fila-productos-filtro" style="display:flex;">
+          <input type="number" id="precio-min" placeholder="min">
+          <input type="number" id="precio-max" placeholder="máx">
+          <button class="btn btn-light btn-block" id="btn-filtrado">Filtrar</button>
+          <input type="button" class="btn btn-link btn-sm" id="btn-limpiar" value="Limpiar">
+        </div>
+      </div>
     </div>
     <div class="container" id="autos_id">
       <div id="auto0_id" class="clase2"></div>

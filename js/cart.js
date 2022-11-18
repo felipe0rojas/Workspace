@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
             contenedorMain.appendChild(btnComprar);
 
             (() => {
-                'use strict'
                 const forms = document.querySelectorAll('.needs-validation')
 
                 Array.from(forms).forEach(form => {

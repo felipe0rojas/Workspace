@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function mostrarDatos() {
     for (let i = 0; i < prods.length; i++) {
       let newDiv = document.getElementById("auto" + [i] + "_id");
-      newDiv.innerHTML += `<h1>${prods[i].name + ' - ' + prods[i].currency + ' ' + prods[i].cost}<h1>`;
+      newDiv.innerHTML += `<h1 class="titulo-prod">${prods[i].name + ' - ' + prods[i].currency + ' ' + prods[i].cost}<h1>`;
       newDiv.innerHTML += `<p class="descripcion">${prods[i].description}</p>`;
-      newDiv.innerHTML += `<div style="display:flex;"><img src=${prods[i].image} id=${[i]}></img>
+      newDiv.innerHTML += `<div class="img-y-vendidos" style="display:flex;"><img src=${prods[i].image} id=${[i]}></img>
       <p class="vendidos" style="margin-top:0.9%; margin-left:0.5%;">${prods[i].soldCount} vendidos</p></div>`;
     }
   }

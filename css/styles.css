@@ -195,64 +195,45 @@ a.custom-card:hover {
   border-right: 4px solid rgba(0, 0, 0, 0.4);
   border-left: 4px solid rgba(0, 0, 0, 0.4);
 }
-
-.clase2{
-  margin-top: 50px;
+.clase2 {
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
   border-top: 4px solid rgba(0, 0, 0, 0.4);
 }
 
-.clase3{
+.clase3 {
   border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;  
+  border-bottom-right-radius: 15px;
   border-bottom: 4px solid rgba(0, 0, 0, 0.4);
 }
 
 
-#autos_id img{
-  position:relative;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+#autos_id img {
+  position: relative;
   border-radius: 2px;
   border: 3px solid rgba(0, 0, 0, 0.4);
-  max-width: 25%;
-  max-height: 25%;
   display: inline-block;
 
 }
 
 
-#autos_id h1{
-  margin-top: 20px;
-  margin-left: 30%;
-  position: absolute;
-}
-.descripcion {
-  max-width: 550px;
-  margin-left: 30%;
-  margin-top: 100px;
-  position: absolute;
-}
-
 #autos_id img:hover {
   transform: scale(1.08);
 }
 
-#autos_id img:hover + p.vendidos{
+#autos_id img:hover+p.vendidos {
   opacity: 1;
 }
 
-.vendidos{
+.vendidos {
   border: 2px solid black;
   background-color: rgba(15, 14, 14, 0.579);
   color: white;
-  position: absolute;  
+  position: absolute;
   opacity: 0;
 }
 
-#precioAsc {
+/* #precioAsc {
   margin-left: 700px;
 }
 
@@ -263,58 +244,159 @@ a.custom-card:hover {
 
 #precio-min {
   margin-left: 650px;
-}
+} */
 
-@media (max-width: 499px){
-  .img-thumbnail{
-    max-width: 20vw; 
+@media (max-width: 499px) {
+
+  .fila-productos-precio{
+    justify-content:center;
+  }
+  .fila-productos-filtro{
+    justify-content:space-around;
+  }
+  #precio-min{
+    max-width: 25vw;
+  }
+  #precio-max{
+    max-width: 25vw;
+  }
+
+  .img-y-vendidos {
+    justify-content: center;
+    padding-bottom: 2vw;
+  }
+
+  #autos_id img {
+    border-radius: 2px;
+    border: 3px solid rgba(0, 0, 0, 0.4);
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+  .titulo-prod {
+    text-align: center;
+  }
+
+  .descripcion {
+    text-align: center;
+  }
+
+  .img-thumbnail {
+    max-width: 20vw;
     max-height: 20vw;
   }
-  .titulo-perfil{
+
+  .titulo-perfil {
     margin-top: 8vw
   }
-  .img-producto-carrito{
+
+  .img-producto-carrito {
     max-width: 150%;
     max-height: 150%;
   }
 
-  #envio-calle + label, #envio-numero + label, #envio-apartamento + label{
+  #envio-calle+label,
+  #envio-numero+label,
+  #envio-apartamento+label {
     font-size: 10px;
   }
 }
 
-@media (min-width: 500px) and (max-width: 849px){
-  .img-thumbnail{
+@media (min-width: 500px) and (max-width: 849px) {
+
+  .fila-precios-filtro{
+    justify-content:space-around;
+    padding-bottom: 20px;
+
+  }
+  #precio-min{
+    max-width: 50vw;
+    margin-right: 2vw;
+  }
+  #precio-max{
+    max-width: 50vw;
+  }
+  
+  #autos_id img {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    max-width: 25%;
+    max-height: 25%;
+
+  }
+
+  .titulo-prod {
+    padding-left: 25vw;
+    position: absolute;
+    font-size: 20px;
+  }
+
+  .descripcion {
+    padding-left: 200px;
+    padding-top: 40px;
+    position: absolute;
+    max-width: 80vw;
+    word-wrap: break-word;
+  }
+
+  .img-thumbnail {
     max-width: 16vw;
     max-height: 16vw;
   }
-  .titulo-perfil{
+
+  .titulo-perfil {
     margin-top: 5vw;
   }
-  .img-producto-carrito{
+
+  .img-producto-carrito {
     max-width: 100%;
     max-height: 100%;
   }
 
-  #envio-calle + label, #envio-numero + label, #envio-apartamento + label{
+  #envio-calle+label,
+  #envio-numero+label,
+  #envio-apartamento+label {
     font-size: 15px;
   }
 }
 
-@media (min-width: 850px){
-  .img-thumbnail{
+@media (min-width: 850px) {
+
+  #autos_id img {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    max-width: 25%;
+    max-height: 25%;
+  }
+
+  .titulo-prod {
+    margin-top: 20px;
+    padding-left: 30%;
+    padding-right: 15%;
+    position: absolute;
+  }
+
+  .descripcion {
+    margin-left: 30%;
+    margin-top: 100px;
+    position: absolute;
+    max-width: 40vw;
+    word-wrap: break-word;
+  }
+
+  .img-thumbnail {
     max-width: 10vw;
     max-height: 10vw;
   }
-  .titulo-perfil{
-    margin-top:auto;
+
+  .titulo-perfil {
+    margin-top: auto;
   }
 
-  .img-producto-carrito{
-    max-width:50%; 
-    max-height:50%;
+  .img-producto-carrito {
+    max-width: 50%;
+    max-height: 50%;
   }
 }
-
-
-
